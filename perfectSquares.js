@@ -10,45 +10,20 @@
 // Output: 2
 // Explanation: 13 = 4 + 9.
 
-// Not complete
 
-function squareNums(n){
-  let squares = [];
-  for (let i = 1; i * i < n; i++) {
-    squares.push(i * i);
-  }
-  return squares;
-}
-
-function perfectSquares(n){
-  let table = new Array(n + 1).fill(Infinity);
-  let squares = squareNums(n);
+function numSquares(n) {
+  const table = new Array(n + 1).fill(Infinity);
   table[0] = 0;
-
-  squares.forEach(square => {
-    for (let n = 0; n < table.length; n++) {
-      for (let qty = 0; qty * square <= n; qty++) {
-        let remainder = n - qty * square;
-        let attempt = table[remainder] + qty;
-        if (attempt < table[n]) table[n] = attempt;
-      }
+  for (let i = 1; i <= n; i++) {
+    for (let j = 1; j * j <= i; j++) {
+      table[i] = Math.min(
+        table[i],
+        table[i - j * j] + 1,
+      );
     }
-  });
-  return table[table.length - 1];
+  }
+  return table[n];
 }
-// function perfectSquares(n){
-//   let squares = squareNums(n);
-//   let value = n;
-//   let minResult = Infinity;
-//   for (let i = 0; i < squares.length; i++) {
-//     for (let quantity = 1; quantity * squares[i] <= value; quantity++) {
-//       if (minResult > quantity && quantity * squares[i] === value) {
-//         minResult = quantity;
-//       }
-//     }
-//   }
-//   return minResult;
-// }
 
 
 console.log(perfectSquares(12));
