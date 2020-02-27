@@ -9,6 +9,8 @@
 // Input: nums = [1], k = 1
 // Output: [1]
 
+// todo: Need to finish this one
+
 function topKFrequent(nums, k){
   if (nums.length === 1) return nums[0];
   let counter = {};
