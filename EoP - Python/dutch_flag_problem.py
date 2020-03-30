@@ -13,7 +13,6 @@ def dutch_flag_partition(pivot_index, A):
       if A[j] < pivot:
         A[i], A[j] = A[j], A[i]
         break
-  
   for i in reversed(range(len(A))):
     if A[i] < pivot:
       break
@@ -28,12 +27,11 @@ def dutch_flag_partition(pivot_index, A):
 
 
 # O(n)
-
 def dutch_flag_partition(pivot_index, A):
   pivot = A[pivot_index]
   # First pass: group elements smaller than pivot
   smaller = 0
-  for i in range(len(A):
+  for i in range(len(A)):
     if A[i] < pivot:
       A[i], A[smaller] = A[smaller], A[i]
       smaller += 1
