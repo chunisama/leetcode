@@ -22,9 +22,3 @@ def replace_and_remove(size, arr):
       arr.pop(idx)
   return arr
 
-# O(n) optimized approach
-
-def replace_and_remove(size, arr):
-  result = []
-  counter = 0
-  
