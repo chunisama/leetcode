@@ -10,7 +10,7 @@
 
 # [0, 3, 5, 7]
 
-# todo: redo
+# todo : redo
 
 from heapq import heappush
 def merge_sorted_arrays(sorted_arrays):

@@ -5,6 +5,7 @@
 # use a nested loop to check if row has duplicates, col has duplicates
 # initialize a new set to check for duplicity for each col and row
 # return false if duplicity exists return true after nested loop
+# O(n^2)
 
 import numpy
 def sudoku_checker(board):
