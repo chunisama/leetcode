@@ -48,4 +48,4 @@ def search_LCA(node_1, node_2, root):
     return root
   return left or right
 
-# todo: watch video
+# todo : watch video

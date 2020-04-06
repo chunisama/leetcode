@@ -7,4 +7,4 @@ def increment_integer(arr):
   next_int = int(arr.join("")) + 1
   return str(next_int).join("")
 
-# todo
+# review

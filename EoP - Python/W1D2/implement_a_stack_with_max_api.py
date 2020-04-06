@@ -4,6 +4,7 @@
 # push operation => appending to the top of the stack => i.e (in an array elements will be added to the end)
 # pop operation => removing of the bottom of the stack => i.e (in an array elements will be removed from the end)
 
+# review
 class Stack:
   def __init__ (self):
     self.stack = []
