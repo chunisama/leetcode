@@ -18,17 +18,19 @@
 # increment left pointer until i visit banana
 # increment right pointer until i visit cat
 
-# import collections
-# def find_smallest_sub_arr(arr, bounds):
-#   left, right = 0, 0
-#   remaining_ele_to_cover = len(bounds)
-#   counter = collections.Counter(bounds)
-#   for ele in arr:
-#     if arr[left] in counter:
-#       while remaining_ele_to_cover != 0:
-#         right += 1
-#       if arr[right] in counter:
-
-
+from collections import Counter
+def find_smallest_sub_arr(arr, keys):
+  length_of_sub = float('inf')
+  for idx, word in enumerate(arr):
+    curr_length = 1
+    if word in keys:
+      words_to_cover = Counter(keys)
+      while words_to_cover and idx < len(arr): 
+        if arr[idx] in words_to_cover:
+          words_to_cover.remove(arr[idx])
+        curr_length += 1
+        idx += 1
+      length_of_sub = min(curr_length, length_of_sub)
+  return length_of_sub
 
 

@@ -5,6 +5,6 @@
 def isValidBST(node, lower = float('-inf'), upper = float('inf')):
   if not node: 
     return True
-  elif lower <= node.val <= upper:
+  elif not lower <= node.val <= upper:
     return False
   return isValidBST(node.left, lower, node.val) and isValidBST(node.right, node.val, upper)
