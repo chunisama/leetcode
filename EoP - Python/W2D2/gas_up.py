@@ -11,7 +11,11 @@ def find_ample_city(gallons, distance):
   city_remaining_gallons_pair = CityAndRemainingGas(0, 0)
   num_cities = len(gallons)
   for i in range(1, num_cities):
-    remaining_gallons += gallons[i - 1] - distance[i - 1] # mpg => adding remaining gas after traversing from previous city to current city
+    remaining_gallons += gallons[i - 1] - distance[i - 1] # mpg => reupping gas at the current city we are at after traversing 
     if remaining_gallons < city_remaining_gallons_pair.remaining_gas:
-      city_remaining_gallons_pair = CityAndRemainingGas(i, remaining_gallons)
+      # core conditional logic is checking that we never have less gallons than what we start with at our starting city
+      # this ensures that our starting city is an ample city
+      # in our algo we use 0 because if we go below 0 we are out of gas
+      city_remaining_gallons_pair = CityAndRemainingGas(i, remaining_gallons) 
   return city_remaining_gallons_pair.city
+
