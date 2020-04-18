@@ -3,4 +3,4 @@
 
 
 # redo
-def paint_boolean_matrix(boolean_arr, x, y)
+# def paint_boolean_matrix(boolean_arr, x, y):
