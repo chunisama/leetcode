@@ -14,7 +14,7 @@
 #     arr[i], arr[j] = arr[j], arr[i]
 #   return result
 
-arr = [1,2]
+arr = [2,3,5,7]
 
 # recursively
 #          None  [2, 3, 5, 7]
