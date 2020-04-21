@@ -1,6 +1,7 @@
 # Write a program that takes a final score and scores for individual plays, and 
 # returns the number of combinations of plays that result in the final score.
 
+# redo
 def count_number_score_combinations(num_plays, total_score):
   dp = [[0 for i in range(total_score + 1)] for i in range(len(num_plays))]
   

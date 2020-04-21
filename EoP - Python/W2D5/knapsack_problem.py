@@ -35,6 +35,8 @@
 # # $70/4 oz [0, 0, 0, $50, $70, $70]
 # # $30/2 oz [0, 0, 30, $50, $70,$80]
 
+
+
 # attempt 2
 # class Clock:
 #   def __init__(self, weight, value):
