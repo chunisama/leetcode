@@ -4,3 +4,12 @@
 
 # redo
 
+def find_LCA_BST(tree, node_a, node_b):
+  while tree.data < node_a.data and tree.data > node_b.data:
+    # keep searching since tree is outside of [node_a, node_b]
+    while tree.data < node_a.data:
+      tree = tree.right # LCA must be the right child
+    while tree.data > node_b.data:
+      tree = tree.left # LCA must bet the left child
+  # now node_a.data <= tree.data and tree.data <= node_b.data
+  return tree
