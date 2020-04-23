@@ -20,10 +20,10 @@ def find_LCA_BST(root, node_a, node_b):
 def find_LCA_BST(root, node_1, node_2):
   if root > max(node_1.data, node_2.data):
     # check left child
-    find_LCA_BST(root.left, node_1, node_2)
+    return find_LCA_BST(root.left, node_1, node_2)
   elif root < min(node_1.data, node_2.data):
     # check right child
-    find_LCA_BST(root.right, node_1, node_2)
+    return find_LCA_BST(root.right, node_1, node_2)
     # found LCA since our current node will be less than node 2, and greater than node 1
   else:
     return root

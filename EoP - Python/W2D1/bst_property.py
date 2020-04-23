@@ -2,6 +2,8 @@
 # the BST property.
 
 # review
+
+
 def isValidBST(node, lower = float('-inf'), upper = float('inf')):
   if not node: 
     return True
