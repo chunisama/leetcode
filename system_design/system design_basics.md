@@ -76,6 +76,7 @@ To utilize full scalability and redundancy, we can try to balance the load at ea
 2. Between web servers and an internal platform layer, like application servers or cache servers.
 3. Between the internal platform layer and database.
    
+![alt text](https://github.com/chunisama/leetcode/blob/master/system_design/load_balancer.png)
 
 
 
