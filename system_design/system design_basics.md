@@ -70,6 +70,7 @@ The LB sits between the client and the server accepting incoming network, applic
 
 By balancing application requests across multiple servers, a load balancer reduces individual server load and prevents any one application server from becoming a single point of failure, thus improving overall application availability and responsiveness. 
 
+![alt text](https://github.com/chunisama/leetcode/blob/master/system_design/load_balancer.png)
 
 
 
