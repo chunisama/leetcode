@@ -60,7 +60,15 @@ Serviceability or manageability is the simplicity and speed at which a system ca
 Early detection of faults can decrease or avoid system downtime. i.e some enterprise systems can automatically call a service center (without human intervention) when the system experiences a system fault.
 
 
+## **Load Balancing**
+***
 
+Load Balancers are a critical component of any distributed system. It helps spread the traffic across a cluster of servers to improve responsiveness and availability of applications, websites or databases. LB keeps track of the status of all the resources while distributing requests. 
+If a server is not available to take new requests, is not responding, or has elevated error rate, then the LB will stop sending traffic to such a server.
+
+The LB sits between the client and the server accepting incoming network, application traffic, and distributing the traffic across multiple backend servers using various algorithms. 
+
+By balancing application requests across multiple servers, a load balancer reduces individual server load and prevents any one application server from becoming a single point of failure, thus improving overall application availability and responsiveness. 
 
 
 
