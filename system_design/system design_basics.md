@@ -68,9 +68,14 @@ If a server is not available to take new requests, is not responding, or has ele
 
 The LB sits between the client and the server accepting incoming network, application traffic, and distributing the traffic across multiple backend servers using various algorithms. 
 
-By balancing application requests across multiple servers, a load balancer reduces individual server load and prevents any one application server from becoming a single point of failure, thus improving overall application availability and responsiveness. 
-
+By balancing application requests across multiple servers, a load balancer reduces individual server load and prevents any one application server from becoming a single point of failure, thus improving overall application availability and responsiveness.
 ![alt text](https://github.com/chunisama/leetcode/blob/master/system_design/load_balancer.png)
+
+To utilize full scalability and redundancy, we can try to balance the load at each layer of the system. We can add Lbs at three places.
+1. Between the user and the web server.
+2. Between web servers and an internal platform layer, like application servers or cache servers.
+3. Between the internal platform layer and database.
+   
 
 
 
