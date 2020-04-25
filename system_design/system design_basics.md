@@ -1,0 +1,70 @@
+# **System Design Basics**
+***
+
+## **Key Characteristics of Distributed Systems**
+
+### **Scalability**
+
+Scalability is the capability of a system, process, or network to grow and manage increased demand. Any distributed system that can continously evolve in order to support growing amount of work is considered to be scalable.
+
+Reasons that a system needs to scale: increased data volume, increased amount of work like number of transactions being processed. The main mission is to acheive a level of scaling without performance loss.
+
+Overall, a system's performance will degrade, even if it was designed to scale, with the system size due to management and environment cost. i.e network speed will be slower because machines tend to be far apart from each other, some tasks might not be distributed due to a flaw in the design. At some point these tasks will limit the speed up obtained by the architecture. Ideally, a scalable architecture avoids this situation and attempts to balance the workload on all participating nodes.
+
+
+#### **Horizontal Scaling vs Vertical Scaling**
+
+Horizontal Scaling means that you can scale by adding more servers into your pool of resources. 
+Vertical Scaling means that you can scale by adding more power(CPU, RAM, storage, etc) to an existing server.
+
+Horizontal Scaling is often easier to scale dynamically by adding more machines into the existing pool.
+i.e Cassandra and MongoDB both provide an easy way to scale horizontally by adding more machines to meet growing needs.
+
+Vertical Scaling is usually limited to the capacity of a single server and scaling beyond that capacity often involves downtime and comes with an upper limit.
+i.e MySql allows for easy way to scale vertically by switching from smaller to larger machines. HOWEVER, this process often involves downtime
+
+### **Reliability**
+
+Reliability is the probability a system will fail in a given period. A system is deemed reliable if it keeps delivering its services even when one or several of its software or hardware components fail. 
+
+Reliability represents one of the main characteristics of any distributed system because any failing machine can be replaced by another healthy one, ensuring the completion of the requested task.
+
+i.e Amazon's system ensures user transactions will never be cancelled due to the failure of the machine running the transaction. For instance, if a user adds an item to his cart, the system is expected to never lose it. 
+A reliable distributed system acheives this through redundancy of both the software components and data. If the server carrying the user's shopping cart fails, another server that has the exact replica of the shopping cart should replace it.
+
+Redundancy has a cost and a reliable system has to pay that to acheive resilience for services by eliminating every single point of failure. 
+
+### **Availability**
+
+Availability is the time a system remains operational to perform its required function in a specific period. It is a measure of the percentage of time that a system, service, or a machine remains operational under normal conditions.
+Availability is comprised of maintainability, repair time, spares availability, and other logistical considerations. Reliability is availability over time considering the full range of possible real world conditions that can occur. 
+
+#### **Reliability vs Availability**
+
+If a system is reliable, it is available. However, if it is available it does not necessarily mean it is reliable. In other words, high reliability contributes to high availability, but it is possible to acheive a high availability even with an unreliable product by minimizing repair time and ensuring that spares are always available when they are needed. 
+i.e A system has 99.99% availability for the first two years. However the system is unreliable due to security vulnerabilities. The system gets hacked and its users data is stolen. This results in reputational and financial damage to the users.
+
+### **Efficiency**
+
+To measure efficiency in a distributed system, lets assume we have an operation that runs in a distributed manner and delivers a set of items as a result. Two standard measures of its efficiency are the response time (or latency) that denotes the delay to obtain the first item and throughout (or bandwidth) which denotes the number of items delivered in a given time unit (seconds). 
+
+Two measures correspond the following unit costs: 
+1. Number of messages globally sent by the nodes of the system, regardless of the message size.
+2. Size of the messages representing the volume of data exchanges.
+
+The complexity of operations supported by distributed data structures can be characterized as a function of these cost units. Keep in mind that factors like "number of messages" are over simplistic because it ignores many factors like network topology, network load, etc. However it is difficult to develop a cost model accounting all these factors, so we proceed with rough estimates of the system behavior. 
+
+### **Serviceability or Manageability**
+
+Serviceability or manageability is the simplicity and speed at which a system can be repaired or maintained; if the time to fix a failed system increase then the availability decreases. Things to consider for manageability are the ease of diagnosing and understanding problems when they occur, ease of making updates or modifications, and how simple is to operate. 
+Early detection of faults can decrease or avoid system downtime. i.e some enterprise systems can automatically call a service center (without human intervention) when the system experiences a system fault.
+
+
+
+
+
+
+
+
+
+
