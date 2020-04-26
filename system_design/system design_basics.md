@@ -107,3 +107,5 @@ There are a variety of load balancing methods, which use different algorithms fo
 
 The Load Balancer can be a single point of failure; to ovecome this, a second load alancer can be connected to the first to form a cluster. Each LB monitors the health of the other and, since both of them are equally capable of serving traffic and failure detection, in the event the main load balancer fails, the second load balancer takes over.
 
+![alt text](https://github.com/chunisama/leetcode/blob/master/system_design/redundant%20LB.png)
+
