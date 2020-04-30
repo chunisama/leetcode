@@ -19,6 +19,8 @@
 # search right side if current version is not bad
 # target is found when left neighbor is good and right neighbor is bad
 
+# redo
+
 def firstBadVersion(n):
   left, right = 1, n
   while left < right:

@@ -6,6 +6,8 @@
 # You may assume that next() call will always be valid, that is, there will be at least a next smallest number
 # in the BST when next() is called.
 
+# redo
+
 class BSTIterator:
 
     def __init__(self, root: TreeNode):
