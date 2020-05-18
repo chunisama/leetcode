@@ -28,3 +28,5 @@ class Solution:
                 head.next.prev = head
             head = head.next
         return temp
+
+        
