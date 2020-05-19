@@ -25,7 +25,7 @@ class Solution:
         # populate adj list
         for idx, sub_arr in enumerate(graph):
             adj_list[idx] = sub_arr
-        # dfs to check all 
+        # dfs to check all neighbors
         def dfs(node, path, graph):
             if node == len(graph) - 1:
                 path = path + [node]

@@ -11,6 +11,7 @@
 # Explanation:
 
 
+
 class Solution:
     def flatten(self, head: 'Node') -> 'Node':
         # O(n) iterative
@@ -20,13 +21,32 @@ class Solution:
             if head.child:
                 if head.next:
                     stack.append(head.next)
-                    head.next = head.child
-                    head.next.prev = head
-                    head.child = None
+                head.next = head.child
+                head.next.prev = head
+                head.child = None
             elif not head.next and stack:
                 head.next = stack.pop()
                 head.next.prev = head
             head = head.next
         return temp
+                
+# O(n) recursive 
+#         if not head:
+#             return head
+#         temp = Node(None, None, head, None)
+#         self.flatten_dfs(temp, head)
+#         temp.next.prev = None
+#         return temp.next
+    
+#     def flatten_dfs(self, prev, curr):
+#         if not curr:
+#             return prev
+#         curr.prev = prev
+#         prev.next = curr
 
+#         tempNext = curr.next
+#         tail = self.flatten_dfs(curr, curr.child)
+#         print(tail.val)
+#         curr.child = None
+#         return self.flatten_dfs(tail, tempNext)
         
