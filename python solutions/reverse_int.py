@@ -24,4 +24,4 @@ class Solution:
         if res > (2**31)-1 or res < -2**31:
             return 0
         return res * sign
-        
+         
