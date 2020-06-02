@@ -8,4 +8,4 @@
 # If there does not exist more candies that can be crushed (ie. the board is stable), then return the current board.
 # You need to perform the above rules until the board becomes stable, then return the current board.
  
-   
+    
