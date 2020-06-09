@@ -32,4 +32,4 @@ def subsets(nums):
       backtrack(0, []) 
   return result
 
-print(subsets([1,2,3]))
+print(subsets([1,2,3]))  
