@@ -21,31 +21,19 @@
 #  2   5
 
 
-# redo
 
-
-def rightSideView(root):
-  queue = [root]
-  level = 1
-  num_nodes = 0
-  current_level = []
-  result = []
-  while len(queue): # [3]
-    node = queue.pop(0)  # queue = []; node = 3
-    current_level.append(node) # CL = [3]
-    level -= 1 # lev = 0
-    if node.right: 
-      queue.append(node.right) # q = [10]
-      num_nodes += 1 # NL = 1
-    if node.left: 
-      queue.append(node.left) # q = [10, 4]
-      num_nodes += 1 # NL = 2
-    if level == 0:
-      result.append(current_level[0].val) # result = [3, 10, 4]
-      current_level = []
-      level = num_nodes
-      num_nodes = 0
-  return result
+def rightSideView(self, root: TreeNode) -> List[int]:
+    result, queue = [], [(root, 0)]
+    while queue: 
+        curr, level = queue.pop(0)
+        if curr:
+            if len(result) < level + 1:
+                result.append([])
+            result[level].append(curr.val)
+            queue.append((curr.left, level + 1))
+            queue.append((curr.right, level + 1))
+    print(result)
+    return [x[-1] for x in result]
 
     
 
