@@ -27,7 +27,7 @@ def subsets(nums):
       backtrack(i + 1, curr)
       curr.pop()
 
-  result = []
+  result = [] 
   for j in range(len(nums) + 1):
       backtrack(0, []) 
   return result
