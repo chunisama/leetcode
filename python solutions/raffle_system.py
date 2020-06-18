@@ -20,7 +20,7 @@ class raffleSystem(object):
     del self.tickets[email]
     
   def pickWinner(self): 
-    temp = []
+    temp = [] 
     for email in self.tickets:
       k = 0
       while k <= self.tickets[email]:
